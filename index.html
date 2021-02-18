@@ -294,53 +294,9 @@
 								<h2 class="major">Contact</h2>
 								<h3>Thank you for visiting my website!</h3>
 								<p>If you have any questions, suggestions, proposal for collaboration or anything, feel free to reach me through my social media or drop me an email (like the good old times).</p>
-    						<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-								<script src="https://www.google.com/recaptcha/api.js?render=6Lfcq8MUAAAAAAtUGX2LthXYUoPmLIdsgmuzf3Cz"></script>
-								<form id="send_email" action="form.php" method="post" >
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="comment">Message</label>
-											<textarea name="comment" id="comment" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" name="submit" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-
-								<script>
-								    $('#send_email').submit(function() {
-								        event.preventDefault();
-												var name = $('#name').val();
-												var email = $('#email').val();
-												var comment = $("#comment").val();
-								        grecaptcha.ready(function() {
-								            grecaptcha.execute('6Lfcq8MUAAAAAAtUGX2LthXYUoPmLIdsgmuzf3Cz', {action: 'send_email_now'}).then(function(token) {
-								                $('#send_email').prepend('<input type="hidden" name="g-recaptcha-response" value="' + token + '">');
-								                    $.post("form.php",{name: name, email: email, comment: comment,token: token}, function(result) {
-																		// $.post("form.php",{token: token}, function(result) {
-								                            console.log(result);
-								                            if(result.success) {
-								                                    alert('E-mail sent. Thanks! I will get back to you as soon as possible')
-								                            } else {
-								                                    alert('ERROR! Anti-spam verification failed. Contact me via my social media. Sorry for the inconvinience.')
-								                            }
-								                    });
-								            });;
-								        });
-								  });
-								  </script>
 
 								<ul class="icons">
+										<li><a href="mailto:me@muharif.net"  target="_blank" class="icon far fa-envelope"><span class="label">Email</span></a></li>
 										<li><a href="http://twitter.com/muharif"  target="_blank" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="https://www.linkedin.com/in/muarif/"  target="_blank"  class="icon brands fa-linkedin"><span class="label">LinkedIn Profile</span></a></li>
 										<li><a href="https://scholar.google.se/citations?user=i8W5ttgAAAAJ&hl=en&oi=ao"  target="_blank"  class="icon ai ai-google-scholar"><span class="label">Google Scholar</span></a></li>
